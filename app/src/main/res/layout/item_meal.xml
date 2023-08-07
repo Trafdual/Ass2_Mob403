@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+<variable
+    name="mealitem"
+    type="tranhph26979.fpoly.assigment.models.Meals" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="#EDEDED"
+        android:layout_width="@dimen/_135sdp"
+        android:layout_height="@dimen/_170sdp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_marginTop="@dimen/_30sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/back_meal"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+
+                android:layout_marginTop="@dimen/_60sdp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="@dimen/_16ssp"
+                android:text="@{mealitem.strMeal}"
+                app:layout_constraintTop_toTopOf="parent"
+                android:id="@+id/tv_namemeal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/image"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/ic_baseline_home_24"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_90sdp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
