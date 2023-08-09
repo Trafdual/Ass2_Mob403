@@ -12,14 +12,17 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 import tranhph26979.fpoly.assigment.databinding.ItemMealBinding;
+import tranhph26979.fpoly.assigment.listener.EventClickListener;
 import tranhph26979.fpoly.assigment.models.Meals;
 
 public class MealAdapter extends RecyclerView.Adapter<MealAdapter.MyViewHolder> {
 
     private List<Meals> mealsList;
 
+
     public MealAdapter(List<Meals> mealsList) {
         this.mealsList = mealsList;
+
     }
 
     @NonNull
@@ -50,6 +53,7 @@ holder.setBinding(mealsList.get(position));
         private void setBinding(Meals meals){
             binding.setMealitem(meals);
             binding.executePendingBindings();
+
         }
     }
 }

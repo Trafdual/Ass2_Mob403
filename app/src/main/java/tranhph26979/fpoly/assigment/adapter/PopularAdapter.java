@@ -12,13 +12,16 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 import tranhph26979.fpoly.assigment.databinding.ItemPopularBinding;
+import tranhph26979.fpoly.assigment.listener.EventClickListener;
 import tranhph26979.fpoly.assigment.models.Meals;
 
 public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.MyViewHolder> {
 private List<Meals> list;
+private EventClickListener listener;
 
-    public PopularAdapter(List<Meals> list) {
+    public PopularAdapter(List<Meals> list, EventClickListener listener) {
         this.list = list;
+        this.listener = listener;
     }
 
     @NonNull
@@ -49,6 +52,12 @@ holder.setBinding(list.get(position));
         private void setBinding(Meals meals){
             binding.setPopular(meals);
             binding.executePendingBindings();
+            binding.getRoot().setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    listener.onPoPularClick(meals);
+                }
+            });
         }
     }
 }

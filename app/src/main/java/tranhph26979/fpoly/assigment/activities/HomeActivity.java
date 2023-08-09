@@ -12,6 +12,7 @@ import tranhph26979.fpoly.assigment.adapter.CategoryAdapter;
 import tranhph26979.fpoly.assigment.adapter.PopularAdapter;
 import tranhph26979.fpoly.assigment.databinding.ActivityHomeBinding;
 import tranhph26979.fpoly.assigment.listener.CategoryListener;
+import tranhph26979.fpoly.assigment.listener.EventClickListener;
 import tranhph26979.fpoly.assigment.models.Category;
 import tranhph26979.fpoly.assigment.models.Meals;
 import tranhph26979.fpoly.assigment.repository.MealRepository;
@@ -25,7 +26,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.io.Console;
 
-public class HomeActivity extends AppCompatActivity implements CategoryListener {
+public class HomeActivity extends AppCompatActivity implements CategoryListener, EventClickListener {
 ActivityHomeBinding binding;
 HomeViewModel homeViewModel;
     @Override
@@ -64,7 +65,7 @@ HomeViewModel homeViewModel;
         });
         homeViewModel.mealModelMutableLiveData(1).observe(this,mealModel -> {
            if (mealModel.isSuccess()){
-               PopularAdapter adapter=new PopularAdapter(mealModel.getResult());
+               PopularAdapter adapter=new PopularAdapter(mealModel.getResult(),this);
                binding.rcPopular.setAdapter(adapter);
            }
         });
@@ -75,6 +76,13 @@ HomeViewModel homeViewModel;
         Intent intent=new Intent(getApplicationContext(), CategoryActivity.class);
         intent.putExtra("idcate",category.getId());
         intent.putExtra("namecate",category.getCategory());
+        startActivity(intent);
+    }
+
+    @Override
+    public void onPoPularClick(Meals meals) {
+        Intent intent=new Intent(getApplicationContext(), ShowDetailActivity.class);
+        intent.putExtra("id",meals.getIdMeal());
         startActivity(intent);
     }
 }

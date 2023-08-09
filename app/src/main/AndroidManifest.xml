@@ -15,6 +15,13 @@
         android:theme="@style/Theme.Assigment"
         tools:targetApi="31">
         <activity
+            android:name=".activities.ShowDetailActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".activities.CategoryActivity"
             android:exported="false">
             <meta-data

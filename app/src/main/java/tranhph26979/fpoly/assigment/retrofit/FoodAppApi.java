@@ -6,6 +6,7 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import tranhph26979.fpoly.assigment.models.CategoryModel;
+import tranhph26979.fpoly.assigment.models.MealDetailModel;
 import tranhph26979.fpoly.assigment.models.MealModel;
 
 public interface FoodAppApi {
@@ -15,5 +16,11 @@ public interface FoodAppApi {
     @FormUrlEncoded
     Call<MealModel> getMeals(
             @Field("idcate") int idcate
+    );
+
+    @POST("mealdetail.php")
+    @FormUrlEncoded
+    Call<MealDetailModel> getMealsDetail(
+            @Field("id") int id
     );
 }
