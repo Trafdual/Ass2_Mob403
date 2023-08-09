@@ -1,2 +1,22 @@
-package tranhph26979.fpoly.assigment.models;public class MessModel {
+package tranhph26979.fpoly.assigment.models;
+
+public class MessModel {
+    private boolean success;
+    private String message;
+
+    public boolean isSuccess() {
+        return success;
+    }
+
+    public void setSuccess(boolean success) {
+        this.success = success;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
 }

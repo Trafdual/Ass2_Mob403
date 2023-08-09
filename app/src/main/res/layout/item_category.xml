@@ -3,36 +3,41 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-<variable
-    name="tengido"
-    type="tranhph26979.fpoly.assigment.models.Category" />
-    </data>
-<androidx.cardview.widget.CardView
-    app:cardCornerRadius="16dp"
-    android:elevation="32dp"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <ImageView
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:id="@+id/image_cate"
-            android:layout_width="170dp"
-            android:layout_height="120dp"/>
-        <TextView
-            android:textSize="20dp"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:text="@{tengido.category}"
-            app:layout_constraintStart_toStartOf="@id/image_cate"
-            app:layout_constraintTop_toBottomOf="@+id/image_cate"
-            android:layout_width="170dp"
-            android:layout_height="wrap_content"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.cardview.widget.CardView>
+        <variable
+            name="tengido"
+            type="tranhph26979.fpoly.assigment.models.Category" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="32dp"
+        app:cardCornerRadius="16dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/image_cate"
+                android:layout_width="170dp"
+                android:layout_height="120dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@{tengido.category}"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/image_cate"
+                app:layout_constraintTop_toBottomOf="@+id/image_cate" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
 </layout>

@@ -16,8 +16,8 @@ import tranhph26979.fpoly.assigment.listener.CategoryListener;
 import tranhph26979.fpoly.assigment.models.Category;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyViewHolder> {
-List<Category> list;
-private CategoryListener listener;
+    List<Category> list;
+    private CategoryListener listener;
 
     public CategoryAdapter(List<Category> list, CategoryListener listener) {
         this.list = list;
@@ -27,13 +27,13 @@ private CategoryListener listener;
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        ItemCategoryBinding itemCategoryBinding=ItemCategoryBinding.inflate(LayoutInflater.from(parent.getContext()));
+        ItemCategoryBinding itemCategoryBinding = ItemCategoryBinding.inflate(LayoutInflater.from(parent.getContext()));
         return new MyViewHolder(itemCategoryBinding);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-holder.setBinding(list.get(position));
+        holder.setBinding(list.get(position));
         Glide.with(holder.itemView).load(list.get(position).getCategoryThumb()).into(holder.binding.imageCate);
     }
 
@@ -42,14 +42,15 @@ holder.setBinding(list.get(position));
         return list.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
+    public class MyViewHolder extends RecyclerView.ViewHolder {
         private ItemCategoryBinding binding;
 
-        public MyViewHolder( ItemCategoryBinding binding) {
+        public MyViewHolder(ItemCategoryBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }
-        public void setBinding(Category category){
+
+        public void setBinding(Category category) {
 
             binding.setTengido(category);
             binding.executePendingBindings();

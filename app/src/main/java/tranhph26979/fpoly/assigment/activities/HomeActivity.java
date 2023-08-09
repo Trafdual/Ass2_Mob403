@@ -35,13 +35,7 @@ HomeViewModel homeViewModel;
        binding=DataBindingUtil.setContentView(this,R.layout.activity_home);
        initData();
        initView();
-       binding.flbgio.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-               Intent intent=new Intent(getApplicationContext(),GioHangActivity.class);
-               startActivity(intent);
-           }
-       });
+
 
     }
 
@@ -53,6 +47,14 @@ HomeViewModel homeViewModel;
         binding.rcPopular.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager1=new GridLayoutManager(this,3);
         binding.rcPopular.setLayoutManager(layoutManager1);
+
+        binding.flbgio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),GioHangActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void initData() {

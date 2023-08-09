@@ -16,8 +16,8 @@ import tranhph26979.fpoly.assigment.listener.EventClickListener;
 import tranhph26979.fpoly.assigment.models.Meals;
 
 public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.MyViewHolder> {
-private List<Meals> list;
-private EventClickListener listener;
+    private List<Meals> list;
+    private EventClickListener listener;
 
     public PopularAdapter(List<Meals> list, EventClickListener listener) {
         this.list = list;
@@ -27,13 +27,13 @@ private EventClickListener listener;
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        ItemPopularBinding itemPopularBinding= ItemPopularBinding.inflate(LayoutInflater.from(parent.getContext()),parent,false);
+        ItemPopularBinding itemPopularBinding = ItemPopularBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
         return new MyViewHolder(itemPopularBinding);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-holder.setBinding(list.get(position));
+        holder.setBinding(list.get(position));
         Glide.with(holder.itemView).load(list.get(position).getStrMealThumb()).into(holder.binding.imgPopular);
     }
 
@@ -42,14 +42,15 @@ holder.setBinding(list.get(position));
         return list.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
+    public class MyViewHolder extends RecyclerView.ViewHolder {
         private ItemPopularBinding binding;
 
-        public MyViewHolder( ItemPopularBinding binding) {
+        public MyViewHolder(ItemPopularBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }
-        private void setBinding(Meals meals){
+
+        private void setBinding(Meals meals) {
             binding.setPopular(meals);
             binding.executePendingBindings();
             binding.getRoot().setOnClickListener(new View.OnClickListener() {

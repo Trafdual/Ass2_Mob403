@@ -13,11 +13,13 @@ import tranhph26979.fpoly.assigment.retrofit.RetrofitInstance;
 
 public class MealRepository {
     private FoodAppApi api;
-    public MealRepository(){
-        api= RetrofitInstance.getRetrofit().create(FoodAppApi.class);
+
+    public MealRepository() {
+        api = RetrofitInstance.getRetrofit().create(FoodAppApi.class);
     }
-    public MutableLiveData<MealModel> getMeals(int idcate){
-        MutableLiveData<MealModel> data=new MutableLiveData<>();
+
+    public MutableLiveData<MealModel> getMeals(int idcate) {
+        MutableLiveData<MealModel> data = new MutableLiveData<>();
         api.getMeals(idcate).enqueue(new Callback<MealModel>() {
             @Override
             public void onResponse(Call<MealModel> call, Response<MealModel> response) {
@@ -26,7 +28,7 @@ public class MealRepository {
 
             @Override
             public void onFailure(Call<MealModel> call, Throwable t) {
-                Log.d("logg",t.getMessage());
+                Log.d("logg", t.getMessage());
                 data.setValue(null);
             }
         });

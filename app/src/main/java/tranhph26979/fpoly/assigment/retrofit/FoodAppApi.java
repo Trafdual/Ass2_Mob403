@@ -8,6 +8,7 @@ import retrofit2.http.POST;
 import tranhph26979.fpoly.assigment.models.CategoryModel;
 import tranhph26979.fpoly.assigment.models.MealDetailModel;
 import tranhph26979.fpoly.assigment.models.MealModel;
+import tranhph26979.fpoly.assigment.models.MessModel;
 
 public interface FoodAppApi {
     @GET("category.php")
@@ -22,5 +23,13 @@ public interface FoodAppApi {
     @FormUrlEncoded
     Call<MealDetailModel> getMealsDetail(
             @Field("id") int id
+    );
+    @POST("cart.php")
+    @FormUrlEncoded
+    Call<MessModel> postCart(
+            @Field("iduser") int iduser,
+            @Field("amount") int amount,
+            @Field("total") double total,
+            @Field("detail") String detail
     );
 }

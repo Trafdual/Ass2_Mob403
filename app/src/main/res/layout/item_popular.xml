@@ -3,26 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-<variable
-    name="popular"
-    type="tranhph26979.fpoly.assigment.models.Meals" />
+
+        <variable
+            name="popular"
+            type="tranhph26979.fpoly.assigment.models.Meals" />
     </data>
-<androidx.cardview.widget.CardView
-    android:layout_margin="@dimen/_3sdp"
-    app:cardCornerRadius="@dimen/_5sdp"
-    android:elevation="@dimen/_8sdp"
-    android:layout_width="@dimen/_90sdp"
-    android:layout_height="@dimen/_120sdp">
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-<ImageView
-    android:id="@+id/img_popular"
-    android:scaleType="centerCrop"
-    app:layout_constraintTop_toTopOf="parent"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"/>
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/_90sdp"
+        android:layout_height="@dimen/_120sdp"
+        android:layout_margin="@dimen/_3sdp"
+        android:elevation="@dimen/_8sdp"
+        app:cardCornerRadius="@dimen/_5sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/img_popular"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
 </layout>
